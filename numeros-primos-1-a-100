@@ -1,0 +1,24 @@
+public class Numeros {
+    public static void main(String[] args) {
+        // Imprime os números de 1 a 100
+        System.out.println("Números de 1 a 100:");
+        for (int i = 1; i <= 100; i++) {
+            System.out.println(i);
+        }
+
+        // Imprime os números primos de 1 a 100
+        System.out.println("\nNúmeros primos de 1 a 100:");
+        for (int num = 2; num <= 100; num++) {
+            boolean primo = true;
+            for (int j = 2; j <= Math.sqrt(num); j++) {
+                if (num % j == 0) {
+                    primo = false;
+                    break;
+                }
+            }
+            if (primo) {
+                System.out.println(num);
+            }
+        }
+    }
+}
