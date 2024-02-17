@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class OperadoraTelefonica {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        final double TARIFA_BASE = 2.50; // Tarifa base por minuto extra
+        final int MINUTOS_LIVRES = 100; // Número de minutos livres
+        
+        System.out.println("Digite o número de minutos: ");
+        int minutosUtilizados = scanner.nextInt();
+        
+        double precoAPagar = 0.0;
+        
+        if (minutosUtilizados > MINUTOS_LIVRES) {
+            // Calcula o preço com minutos extras
+            int minutosExtras = minutosUtilizados - MINUTOS_LIVRES;
+            precoAPagar = minutosExtras * TARIFA_BASE;
+        }
+        
+        System.out.println("Preço a pagar: R$ " + precoAPagar);
+        
+        scanner.close();
+    }
+}
