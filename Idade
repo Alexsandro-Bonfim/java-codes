@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Idade {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite sua idade:");
+        int age = scanner.nextInt();
+
+        if (age >= 13 && age <= 17) {
+            System.out.println("Você é adolescente.");
+        } else if (age >= 18 && age <= 59) {
+            System.out.println("Você é adulto.");
+        } else if (age >= 60) {
+            System.out.println("Você é idoso.");
+        } else {
+            System.out.println("Idade inválida."); // Adicionando tratamento para idade inválida
+        }
+
+        scanner.close();
+    }
+}
