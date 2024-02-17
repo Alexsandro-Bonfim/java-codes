@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Menu {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("## --- Estrutura de Menu --- ##");
+        System.out.println("---------------------------");
+        System.out.println("Opção 1 - Maçã");
+        System.out.println("Opção 2 - Banana");
+        System.out.println("Opção 3 - Laranja");
+        System.out.println("Opção 4 - Morango");
+        System.out.println("Opção 5 - Abacaxi");
+        System.out.println("---------------------------");
+
+        System.out.println("Digite o número da opção desejada:");
+        int opcao = scanner.nextInt();
+
+        // Aqui você pode adicionar o código para lidar com a escolha do usuário
+        // Por exemplo, usando uma instrução switch para cada opção
+
+        switch (opcao) {
+            case 1:
+                System.out.println("Você escolheu Maçã.");
+                break;
+            case 2:
+                System.out.println("Você escolheu Banana.");
+                break;
+            case 3:
+                System.out.println("Você escolheu Laranja.");
+                break;
+            case 4:
+                System.out.println("Você escolheu Morango.");
+                break;
+            case 5:
+                System.out.println("Você escolheu Abacaxi.");
+                break;
+            default:
+                System.out.println("Opção inválida.");
+                break;
+        }
+
+        scanner.close();
+    }
+}
