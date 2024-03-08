@@ -1,0 +1,41 @@
+public class Animal {
+    public String nome;
+    public Float comprimento;
+    public int patas;
+    public String cor;
+    public String ambiente;
+    public int velocidade;
+
+    public Animal(String nome, Float comprimento, int patas, String cor, String ambiente, int velocidade) {
+        this.nome = nome;
+        this.comprimento = comprimento;
+        this.patas = patas;
+        this.cor = cor;
+        this.ambiente = ambiente;
+        this.velocidade = velocidade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Float getComprimento() {
+        return comprimento;
+    }
+
+    public int getPatas() {
+        return patas;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public String getAmbiente() {
+        return ambiente;
+    }
+
+    public int getVelocidade() {
+        return velocidade;
+    }
+}
