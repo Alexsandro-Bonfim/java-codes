@@ -1,0 +1,199 @@
+import java.util.Scanner;
+
+public class ArquivoProva {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int escolha;
+//Menu
+        do {
+            System.out.println("Menu:");
+            System.out.println("1 - Cadastrar ar-condicionado Splinter:");
+            System.out.println("2 - Cadastrar ar-condicionado Portatil:");
+            System.out.println("3 - Sair:");
+            int op = scanner.nextInt();
+
+//Switch 
+            switch (op) {
+                case 1:
+                    System.out.println("Digite o modelo:");
+                    String modelo1 = scanner.next();
+                    System.out.println("Digite o codigo:");
+                    String codigo1 = scanner.next();
+                    System.out.println("Digite a marca:");
+                    String marca1 = scanner.next();
+                    System.out.println("Digite o BTU:");
+                    String btu1 = scanner.next();
+                    System.out.println("Digite o defeito:");
+                    String defeito1 = scanner.next();
+
+                    Arcondicionado arcondicionado1 = new Arcondicionado(modelo1, codigo1, marca1, btu1, defeito1);
+
+                    System.out.println("Digite o tipo do ar-condicionado splinter: ");
+                    String tipos1 = scanner.next();
+                    System.out.println("Digite o tamanho do ar-condicionado splinter: ");
+                    Double tamanho1 = scanner.nextDouble();
+                    Splinter splinter = new Splinter(modelo1, codigo1, marca1, btu1, defeito1, tipos1, tamanho1);
+
+                    System.out.println();
+                    System.out.println("Informações ar-condicionado Splinter");
+                    splinter.exibirInfo();
+
+                    break;
+
+                case 2:
+                    System.out.println("Digite o modelo:");
+                    String modelo2 = scanner.next();
+                    System.out.println("Digite o codigo:");
+                    String codigo2 = scanner.next();
+                    System.out.println("Digite a marca:");
+                    String marca2 = scanner.next();
+                    System.out.println("Digite o BTU:");
+                    String btu2 = scanner.next();
+                    System.out.println("Digite o defeito:");
+                    String defeito2 = scanner.next();
+
+                    Arcondicionado arcondicionado2 = new Arcondicionado(modelo2, codigo2, marca2, btu2, defeito2);
+
+                    System.out.println("Digite a cor do ar-condicionado: ");
+                    String cor2 = scanner.next();
+                    System.out.println("Digite a voltagem do ar-condicionado: ");
+                    Double voltagem2 = scanner.nextDouble();
+                    Portatil portatil = new Portatil(modelo2, codigo2, marca2, btu2, defeito2, voltagem2, cor2);
+
+                    System.out.println();
+                    System.out.println("Informações ar-condicionado Portatil");
+                    portatil.exibirInfo();
+
+                    break;
+                case 3:
+                    System.exit(0);
+                    break;
+
+                default:
+                    System.out.println("Opcao invalida");
+            }
+
+            System.out.println();
+            System.out.println("Digite: 1 - Para continuar ou 2 - Para sair");
+            escolha = scanner.nextInt();
+            System.out.println("");
+        } while (escolha != 2);
+
+        scanner.close();
+
+    }
+}
+
+class Arcondicionado {
+
+    private String modelo;
+    private String codigo;
+    private String marca;
+    private String BTU;
+    private String defeito;
+
+    public Arcondicionado(String modelo, String codigo, String marca, String BTU, String defeito) {
+        this.modelo = modelo;
+        this.codigo = codigo;
+        this.marca = marca;
+        this.BTU = BTU;
+        this.defeito = defeito;
+    }
+
+    public String getModelo() {  //Getter
+        return modelo;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getBTU() {
+        return BTU;
+    }
+
+    public String getDefeito() {
+        return defeito;
+    }
+
+    public void exibirInfo() {   //Exibe as informações na tela 
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Código: " + codigo);
+        System.out.println("Marca: " + marca);
+        System.out.println("BTU: " + BTU);
+        System.out.println("Defeito: " + defeito);
+    }
+}
+
+class Portatil extends Arcondicionado { //Herança 
+    private Double voltagem;
+    private String cor;
+
+    public Portatil(String modelo, String codigo, String marca, String BTU, String defeito, Double voltagem, String cor) {
+        super(modelo, codigo, marca, BTU, defeito);
+        this.voltagem = voltagem;
+        this.cor = cor;
+    }
+
+    public Double getVoltagem() {
+        return voltagem;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setVoltagem(Double voltagem) {  //Setter
+        this.voltagem = voltagem;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    @Override
+    public void exibirInfo() {
+        super.exibirInfo();
+        System.out.println("Voltagem: " + voltagem);
+        System.out.println("Cor: " + cor);
+    }
+}
+
+class Splinter extends Arcondicionado {
+    private String tipos;
+    private Double tamanho;
+
+    public Splinter(String modelo, String codigo, String marca, String BTU, String defeito, String tipos, Double tamanho) {
+        super(modelo, codigo, marca, BTU, defeito);
+        this.tipos = tipos;
+        this.tamanho = tamanho;
+    }
+
+    public String getTipos() {
+        return tipos;
+    }
+
+    public Double getTamanho() {
+        return tamanho;
+    }
+
+    public void setTipos(String tipos) {
+        this.tipos = tipos;
+    }
+
+    public void setTamanho(Double tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    @Override
+    public void exibirInfo() {
+        super.exibirInfo();
+        System.out.println("Tipos: " + tipos);
+        System.out.println("Tamanho: " + tamanho);
+    }
+}
